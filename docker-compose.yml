@@ -21,6 +21,10 @@ services:
     networks:
       - my-network
   php:
+    # environment:
+    #   - uid=UID
+    #   - gid=GID
+    user: ${CURRENT_UID}
     depends_on:
       - db
     image: yiisoftware/yii2-php:7.4-apache
